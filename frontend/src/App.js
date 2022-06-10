@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import TextInput from './Components/TextInput/TextInput';
 
 function App() {
   useEffect(() => {
@@ -23,9 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to Baseball Wordle!</h1>
-      <form>
-        {/* <input type="text">Pick a Player</input> */}
-      </form>
+      <TextInput />
     </div>
   );
 }
