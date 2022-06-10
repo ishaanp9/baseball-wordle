@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    getMLBPlayers();
+  }, []);
+
+  const getMLBPlayers = () => {
+    const requestOptions = {
+      method: 'GET',
+    };
+    fetch(`http://localhost:5000/mlb-players`, requestOptions)
+      .then(async (response) => {
+        const data = await response.json();
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log('There was an error!', error);
+      });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to Baseball Wordle!</h1>
+      <form>
+        {/* <input type="text">Pick a Player</input> */}
+      </form>
     </div>
   );
 }
