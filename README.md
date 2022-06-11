@@ -1,2 +1,2 @@
 # baseball-wordle
- baseball worlde
+Baseball Worlde Application Built with Flask, Python, and React
