@@ -1,23 +1,8 @@
 import React, { useState } from 'react';
 
-function TextInput() {
+const TextInput = ({setValue}) => {
   const [playerName, setPlayerName] = useState('');
-
-  const getSpecificPlayer = () => {
-    const requestOptions = {
-      method: 'GET',
-    };
-    fetch(`http://localhost:5000//get-player-info/${playerName}`, requestOptions)
-      .then(async (response) => {
-        const data = await response.json();
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log('There was an error!', error);
-      });
-  };
-
-
+  
   return (
     <div>
       <form>
@@ -27,7 +12,7 @@ function TextInput() {
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value)}
         />
-        <div onClick={() => getSpecificPlayer()}>Click me</div>
+        <div onClick={() => setValue(playerName)}>Click me</div>
       </form>
     </div>
   );

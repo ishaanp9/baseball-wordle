@@ -1,0 +1,9 @@
+.playerItemContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.playerAttributeContainer {
+    margin-right: 25px;
+}
