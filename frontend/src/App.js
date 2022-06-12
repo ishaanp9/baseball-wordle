@@ -8,24 +8,11 @@ function App() {
   const [anwser, setAnwser] = useState([]);
 
   useEffect(() => {
-    getMLBPlayers();
     getAnwser();
     setPlayerInfo([]);
   }, []);
 
-  const getMLBPlayers = () => {
-    const requestOptions = {
-      method: 'GET',
-    };
-    fetch(`http://localhost:5000/mlb-players`, requestOptions)
-      .then(async (response) => {
-        const data = await response.json();
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log('There was an error!', error);
-      });
-  };
+
 
   const getSpecificPlayer = (player) => {
     const requestOptions = {

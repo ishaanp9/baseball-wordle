@@ -3,7 +3,7 @@ import './PlayerItem.css';
 
 const PlayerItem = (props) => {
 
-  console.log(props.finalPlayer["name"]);
+  console.log(props.finalPlayer);
 
   let teamColor = '';
   let positionColor = '';

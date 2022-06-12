@@ -19,6 +19,7 @@ CORS(app)
 # parse_json = json.loads(data)
 # print(parse_json["people"])
 
+
 teamData = {
     "DIAMONDBACKS": {"League": "National League", "Division": "West"},
     "BRAVES": {"League": "National League", "Division": "East"},
