@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import './PlayerItem.css';
 
 const PlayerItem = (props) => {
-
   console.log(props.finalPlayer);
 
+  let isCorrect = false;
   let teamColor = '';
   let positionColor = '';
   let leagueColor = '';
@@ -15,6 +15,11 @@ const PlayerItem = (props) => {
   let numberColor = '';
   let ageColor = '';
   let birthCountryColor = '';
+
+  if (props.finalPlayer['name'] === props.name) {
+    isCorrect = true;
+    props.setCorrectPlayer(true);
+  }
 
   if (props.finalPlayer['team'] === props.team) {
     teamColor = 'lightgreen';
@@ -78,10 +83,7 @@ const PlayerItem = (props) => {
 
   return (
     <div className="playerItemContainer">
-      <div
-        className="playerAttributeContainer"
-        // style={{ backgroundColor: nameColor }}
-      >
+      <div className="playerAttributeContainer">
         <p>{props.name}</p>
       </div>
       <div
@@ -144,6 +146,7 @@ const PlayerItem = (props) => {
       >
         <p>{props.birthCountry}</p>
       </div>
+      )
     </div>
   );
 };
